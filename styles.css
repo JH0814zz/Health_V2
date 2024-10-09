@@ -1,0 +1,232 @@
+/* 기본 설정 */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* 배경색 */
+    color: #e0e0e0; /* 텍스트 색상 */
+    margin: 0;
+    padding: 20px;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #1e1e1e; /* 다크 그레이 컨테이너 */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #b0bec5; /* 밝은 회색으로 변경 */
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #e0e0e0;
+    border-bottom: 2px solid #b0bec5; /* 강조 색상 변경 */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 폼 스타일 */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #e0e0e0; /* 텍스트 색상 */
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #444; /* 경계색 */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    background: #333; /* 입력 필드 배경 */
+    color: #e0e0e0; /* 텍스트 색상 */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #b0bec5; /* 강조 색상 변경 */
+    box-shadow: 0 0 5px rgba(176, 190, 197, 0.5);
+    outline: none;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 12px;
+    background-color: #b0bec5; /* 버튼 색상 */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #90a4ae; /* 강조 색상 */
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #555; /* 비활성 버튼 색상 */
+    cursor: not-allowed;
+}
+
+/* 운동 카드 스타일 */
+.exercise-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.exercise-card {
+    background-color: #2c2c2c; /* 카드 배경 색상 */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent; /* 기본 테두리 */
+}
+
+.exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.exercise-card.selected {
+    background-color: #b0bec5; /* 선택된 카드 색상 */
+    color: black;
+    border: 2px solid #90a4ae; /* 선택된 카드의 테두리 */
+}
+
+/* 무게 조절 컨테이너 스타일 */
+.weight-adjustment-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #2c2c2c; /* 무게 조절 컨테이너 배경 색상 */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 무게 조절 버튼 스타일 */
+.weight-button {
+    background-color: #b0bec5; /* 버튼 색상 */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.weight-button:hover {
+    background-color: #90a4ae; /* 강조 색상 */
+}
+
+/* 무게 텍스트 스타일 */
+.weight-text {
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+/* 타이머 섹션 스타일 */
+.timer-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timer {
+    font-size: 2.5em;
+    color: #ff4081; /* 타이머 색상 */
+    margin: 10px 0;
+    font-weight: bold; /* 굵게 표시 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 약간의 그림자 효과 추가 */
+}
+
+/* 히스토리 스타일 */
+.history-list {
+    margin-top: 20px;
+    background-color: #1c1c1c; /* 히스토리 배경 색상 */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.history-item {
+    border-bottom: 1px solid #444; /* 구분선 색상 */
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.history-item:last-child {
+    border-bottom: none; /* 마지막 항목의 경계 제거 */
+}
+
+.history-item:hover {
+    background-color: #333; /* 다크 모드 호버 색상 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    input {
+        font-size: 0.9em;
+    }
+
+    .exercise-card {
+        padding: 10px;
+    }
+
+    .timer {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    button {
+        font-size: 0.9em;
+    }
+
+    .exercise-card {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
