@@ -1,20 +1,20 @@
 /* 기본 설정 */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #2e2e2e; /* 어두운 회색 배경 */
-    color: #d3d3d3; /* 밝은 회색 텍스트 */
+    background-color: #20232a; /* 다크 배경 */
+    color: #e4e4e4; /* 밝은 텍스트 */
     margin: 0;
     padding: 20px;
-    transition: background-color 0.3s, color 0.3s; /* 배경 및 텍스트 색상 변화 애니메이션 */
+    transition: background-color 0.5s, color 0.5s; /* 부드러운 색상 전환 */
 }
 
 /* 컨테이너 스타일 */
 .container {
     max-width: 800px;
     margin: auto;
-    background: #3a3a3a; /* 다크 모드 컨테이너 */
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background: #282c34; /* 컨테이너 배경 */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* 깊이 있는 그림자 */
     padding: 20px;
     opacity: 0; /* 초기 페이드 효과 */
     animation: fadeIn 0.5s forwards; /* 페이드 인 애니메이션 */
@@ -31,14 +31,25 @@ body {
 h1 {
     font-size: 2.5em;
     text-align: center;
-    color: #b0c4de; /* 연한 파란색으로 변경 */
+    color: #ff4757; /* 붉은 색상 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 텍스트 그림자 */
     margin-bottom: 20px;
+    animation: glow 1.5s infinite alternate; /* 글로우 애니메이션 */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff4757, 0 0 10px #ff4757, 0 0 15px #ff4757;
+    }
+    100% {
+        text-shadow: 0 0 10px #ff4757, 0 0 20px #ff4757, 0 0 30px #ff4757;
+    }
 }
 
 h2 {
     font-size: 1.8em;
-    color: #d3d3d3;
-    border-bottom: 2px solid #b0c4de; /* 강조 색상 변경 */
+    color: #f8f9fa;
+    border-bottom: 2px solid #ff4757; /* 강조 색상 변경 */
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -53,42 +64,43 @@ form {
 label {
     margin-bottom: 5px;
     font-weight: bold;
-    color: #d3d3d3; /* 텍스트 색상 */
+    color: #f8f9fa; /* 텍스트 색상 */
 }
 
 input {
     padding: 12px;
-    border: 1px solid #666; /* 경계색 변경 */
+    border: 1px solid #444; /* 경계색 */
     border-radius: 5px;
     margin-bottom: 15px;
     font-size: 1em;
-    background: #4a4a4a; /* 입력 필드 배경 */
-    color: #d3d3d3; /* 텍스트 색상 */
+    background: #3f4147; /* 입력 필드 배경 */
+    color: #f8f9fa; /* 텍스트 색상 */
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-    border-color: #b0c4de; /* 강조 색상 */
-    box-shadow: 0 0 5px rgba(176, 196, 222, 0.5);
+    border-color: #ff4757; /* 강조 색상 */
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.5); /* 강조 효과 */
     outline: none;
 }
 
 /* 버튼 스타일 */
 button {
     padding: 12px;
-    background-color: #b0c4de; /* 버튼 색상 */
-    color: #2e2e2e; /* 어두운 텍스트 */
+    background-color: #ff4757; /* 버튼 색상 */
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* 버튼 그림자 */
 }
 
 button:hover {
-    background-color: #a9b2c3; /* 강조 색상 */
+    background-color: #ff6b81; /* 강조 색상 */
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 button:disabled {
@@ -104,7 +116,7 @@ button:disabled {
 }
 
 .exercise-card {
-    background-color: #4a4a4a; /* 카드 배경 색상 */
+    background-color: #3f4147; /* 카드 배경 색상 */
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -121,16 +133,16 @@ button:disabled {
 }
 
 .exercise-card.selected {
-    background-color: #b0c4de; /* 선택된 카드 색상 */
-    color: #2e2e2e; /* 어두운 텍스트 */
-    border: 2px solid #a9b2c3; /* 선택된 카드의 테두리 */
+    background-color: #ff4757; /* 선택된 카드 색상 */
+    color: white;
+    border: 2px solid #ff6b81; /* 선택된 카드의 테두리 */
 }
 
 /* 무게 조절 컨테이너 스타일 */
 .weight-adjustment-container {
     margin: 20px 0;
     padding: 15px;
-    background-color: #4a4a4a; /* 무게 조절 컨테이너 배경 색상 */
+    background-color: #3f4147; /* 무게 조절 컨테이너 배경 색상 */
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -139,7 +151,7 @@ button:disabled {
 
 /* 무게 조절 버튼 스타일 */
 .weight-button {
-    background-color: #b0c4de; /* 버튼 색상 */
+    background-color: #ff4757; /* 버튼 색상 */
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -148,13 +160,13 @@ button:disabled {
 }
 
 .weight-button:hover {
-    background-color: #a9b2c3; /* 강조 색상 */
+    background-color: #ff6b81; /* 강조 색상 */
 }
 
 /* 무게 텍스트 스타일 */
 .weight-text {
     font-size: 1.2em;
-    color: #d3d3d3;
+    color: #e4e4e4;
 }
 
 /* 타이머 섹션 스타일 */
@@ -165,9 +177,10 @@ button:disabled {
 
 .timer {
     font-size: 2.5em;
-    color: #ff69b4; /* 타이머 색상 */
+    color: #ff9f43; /* 타이머 색상 */
     margin: 10px 0;
     font-weight: bold; /* 굵게 표시 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
 }
 
 /* 히스토리 스타일 */
@@ -181,7 +194,7 @@ button:disabled {
 .history-item {
     border-bottom: 1px solid #666; /* 구분선 색상 */
     padding: 10px 0;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .history-item:last-child {
@@ -190,20 +203,29 @@ button:disabled {
 
 .history-item:hover {
     background-color: #4a4a4a; /* 다크 모드 호버 색상 */
+    transform: scale(1.02); /* 약간의 크기 증가 */
 }
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+        background-color: #181b1f; /* 모바일 다크 모드 배경 색상 */
+    }
+
     h1 {
         font-size: 2em;
+        color: #ff6b81; /* 모바일에서의 강조 색상 */
     }
 
     h2 {
         font-size: 1.5em;
+        color: #f1f1f1; /* 모바일에서의 텍스트 색상 */
     }
 
     button {
         font-size: 1em;
+        padding: 15px; /* 버튼 패딩 증가 */
     }
 
     input {
@@ -212,20 +234,22 @@ button:disabled {
 
     .exercise-card {
         padding: 10px;
+        transition: transform 0.5s; /* 더 부드러운 애니메이션 */
     }
 
     .timer {
-        font-size: 1.8em;
+        font-size: 2em; /* 모바일 타이머 크기 조정 */
     }
 }
 
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 5px; /* 패딩 감소 */
     }
 
     h1 {
         font-size: 1.8em;
+        color: #ff6b81; /* 모바일 강조 색상 */
     }
 
     h2 {
@@ -234,10 +258,12 @@ button:disabled {
 
     button {
         font-size: 0.9em;
+        padding: 12px; /* 버튼 패딩 조정 */
     }
 
     .exercise-card {
         padding: 8px;
         font-size: 0.9em;
+        transition: transform 0.3s; /* 빠른 애니메이션 */
     }
 }
